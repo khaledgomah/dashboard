@@ -38,7 +38,9 @@ class _IncomeSectionState extends State<IncomeSection> {
   int touchedIndex = -1;
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
     return Container(
+      padding: const EdgeInsets.all(20),
       margin: EdgeInsets.only(top: 40, left: 24, right: 32),
       decoration: BoxDecoration(
           color: ColorManager.white, borderRadius: BorderRadius.circular(12)),
@@ -50,18 +52,19 @@ class _IncomeSectionState extends State<IncomeSection> {
           ),
           Row(
             children: [
+              SizedBox(
+                width: 30,
+              ),
               Expanded(
                 flex: 120,
                 child: AspectRatio(
-                  
                   aspectRatio: 1,
                   child: PieChart(
-                    
                     PieChartData(
                       pieTouchData: PieTouchData(touchCallback: touchCallback),
                       borderData: FlBorderData(show: false),
                       sectionsSpace: 0,
-                      centerSpaceRadius: 50,
+                      centerSpaceRadius: 40,
                       sections: widget._list
                           .asMap()
                           .map((index, item) => MapEntry(
@@ -70,7 +73,7 @@ class _IncomeSectionState extends State<IncomeSection> {
                                   color: item.color,
                                   value: item.amount.toDouble(),
                                   showTitle: false,
-                                  radius: index == touchedIndex ? 40 : 35,
+                                  radius: index == touchedIndex ? 30 : 25,
                                 ),
                               ))
                           .values
@@ -83,13 +86,14 @@ class _IncomeSectionState extends State<IncomeSection> {
                 width: 40,
               ),
               Expanded(
-                flex: 268,
+                flex: 300,
                 child: Column(
                   children: widget._list
                       .asMap()
                       .map((index, item) => MapEntry(
                             index,
                             ListTile(
+                              contentPadding: EdgeInsets.zero,
                               leading: CircleAvatar(
                                 backgroundColor: item.color,
                                 radius: 6,
