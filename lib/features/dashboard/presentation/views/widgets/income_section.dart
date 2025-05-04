@@ -38,7 +38,6 @@ class _IncomeSectionState extends State<IncomeSection> {
   int touchedIndex = -1;
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.width);
     return Container(
       padding: const EdgeInsets.all(20),
       margin: EdgeInsets.only(top: 40, left: 24, right: 32),
