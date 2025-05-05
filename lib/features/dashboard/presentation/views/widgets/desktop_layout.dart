@@ -11,14 +11,17 @@ class DesktopLayout extends StatelessWidget {
       children: [
         Expanded(flex: 280, child: DesktopDrawer()),
         Expanded(
-          flex: 468 + 604,
+          flex: 604 + 468,
           child: SingleChildScrollView(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
               children: [
-                Expanded(
-                    flex: 604, child: AllExpensessAndQuickInvoiceSection()),
-                Expanded(flex: 468, child: CardsAndIncomeSection()),
+                Row(
+                  children: [
+                    Expanded(
+                        flex: 604, child: AllExpensessAndQuickInvoiceSection()),
+                    Expanded(flex: 468, child: CardsAndIncomeSection()),
+                  ],
+                ),
               ],
             ),
           ),

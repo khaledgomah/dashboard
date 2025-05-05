@@ -16,33 +16,35 @@ class DesktopDrawer extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: UserInfoWidget(
-              user: UserModel(
-                  name: 'Lekan Okeowo',
-                  email: 'demo@gmail.com',
-                  profilePictureUrl: Assets.imagesUser),
+    return Drawer(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: UserInfoWidget(
+                user: UserModel(
+                    name: 'Lekan Okeowo',
+                    email: 'demo@gmail.com',
+                    profilePictureUrl: Assets.imagesUser),
+              ),
             ),
-          ),
-          MenuWidget(),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 20,
+            MenuWidget(),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 20,
+                    ),
                   ),
-                ),
-                FooterMenuWidget()
-              ],
+                  FooterMenuWidget()
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
