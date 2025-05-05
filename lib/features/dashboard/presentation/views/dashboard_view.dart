@@ -35,5 +35,5 @@ class SizeConfig {
   // static double blockSizeVertical2 = 0;
   // static double blockSizeHorizontal2 = 0;
   static double tabletBreakpoint = 800;
-  static double desktopBreakpoint = 1400;
+  static double desktopBreakpoint = 1300;
 }

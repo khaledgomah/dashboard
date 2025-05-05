@@ -45,34 +45,33 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24.0, right: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      cardModel.number,
-                      style: FontStyleManager.styleSemiBold24
-                          .copyWith(color: ColorManager.white),
-                    ),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '${cardModel.date} - ${cardModel.cvv}',
-                      style: FontStyleManager.styleRegular16
-                          .copyWith(color: ColorManager.white),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 24.0, right: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Row(),
+                  Text(
+                    cardModel.number,
+                    style: FontStyleManager.styleSemiBold24
+                        .copyWith(color: ColorManager.white),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text(
+                    '${cardModel.date} - ${cardModel.cvv}',
+                    style: FontStyleManager.styleRegular16
+                        .copyWith(color: ColorManager.white),
+                  )
+                ],
               ),
-            )
+            ),
+            Flexible(
+              child: SizedBox(
+                height: 20,
+              ),
+            ),
           ],
         ),
       ),
