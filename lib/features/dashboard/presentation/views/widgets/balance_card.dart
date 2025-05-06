@@ -30,57 +30,44 @@ class BalanceCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: !isSelected
-                          ? ColorManager.lightGrey
-                          : ColorManager.white.withAlpha(25),
-                      radius: 30,
-                      child: SvgPicture.asset(
-                        balanceItemModel.iconPath,
-                        colorFilter: ColorFilter.mode(
-                          !isSelected
-                              ? ColorManager.primary
-                              : ColorManager.white,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 24,
-                      color: !isSelected
-                          ? ColorManager.secondary
-                          : ColorManager.white,
-                    ),
-                  ],
-                ),
+                CardHeader(
+                    isSelected: isSelected, balanceItemModel: balanceItemModel),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      balanceItemModel.title,
-                      style: FontStyleManager.styleSemiBold20(context).copyWith(
-                          color: !isSelected
-                              ? ColorManager.secondary
-                              : ColorManager.white),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        balanceItemModel.title,
+                        style: FontStyleManager.styleSemiBold20(context)
+                            .copyWith(
+                                color: !isSelected
+                                    ? ColorManager.secondary
+                                    : ColorManager.white),
+                      ),
                     ),
-                    Text(
-                      balanceItemModel.date,
-                      style: FontStyleManager.styleRegular14(context).copyWith(
-                          color: !isSelected
-                              ? ColorManager.grey
-                              : ColorManager.lightGrey),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        balanceItemModel.date,
+                        style: FontStyleManager.styleRegular14(context)
+                            .copyWith(
+                                color: !isSelected
+                                    ? ColorManager.grey
+                                    : ColorManager.lightGrey),
+                      ),
                     ),
-                    Text(
-                      balanceItemModel.amount,
-                      style: FontStyleManager.styleSemiBold24(context).copyWith(
-                          color: !isSelected
-                              ? ColorManager.primary
-                              : ColorManager.white),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        balanceItemModel.amount,
+                        style: FontStyleManager.styleSemiBold24(context)
+                            .copyWith(
+                                color: !isSelected
+                                    ? ColorManager.primary
+                                    : ColorManager.white),
+                      ),
                     ),
                   ],
                 )
@@ -89,6 +76,50 @@ class BalanceCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CardHeader extends StatelessWidget {
+  const CardHeader({
+    super.key,
+    required this.isSelected,
+    required this.balanceItemModel,
+  });
+
+  final bool isSelected;
+  final BalanceItemModel balanceItemModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Flexible(
+          child: CircleAvatar(
+            radius: 30,
+            backgroundColor: !isSelected
+                ? ColorManager.lightGrey
+                : ColorManager.white.withAlpha(25),
+            child: Center(
+              child: SvgPicture.asset(
+                balanceItemModel.iconPath,
+                colorFilter: ColorFilter.mode(
+                  !isSelected ? ColorManager.primary : ColorManager.white,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Flexible(
+          child: Icon(
+            Icons.arrow_forward_ios_rounded,
+            size: 24,
+            color: !isSelected ? ColorManager.secondary : ColorManager.white,
+          ),
+        ),
+      ],
     );
   }
 }

@@ -24,7 +24,6 @@ class _AllExpensesState extends State<AllExpenses> {
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               AllExpressHeader(),
               SizedBox(

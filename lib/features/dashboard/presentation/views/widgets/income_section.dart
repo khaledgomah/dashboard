@@ -1,5 +1,7 @@
 import 'package:dashboard/features/dashboard/presentation/views/widgets/income_header.dart';
 import 'package:dashboard/models/income_item.dart';
+import 'package:dashboard/models/size_config.dart';
+import 'package:dashboard/resources/build_context_extention.dart';
 import 'package:dashboard/resources/color_manager.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +42,10 @@ class _IncomeSectionState extends State<IncomeSection> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      margin: EdgeInsets.only(top: 40, left: 24, right: 32),
+      margin: EdgeInsets.only(
+          top: context.screenWidth > SizeConfig.desktopBreakpoint ? 40 : 12,
+          left: context.screenWidth > SizeConfig.desktopBreakpoint ? 24 : 12,
+          right: context.screenWidth > SizeConfig.desktopBreakpoint ? 32 : 12),
       decoration: BoxDecoration(
           color: ColorManager.white, borderRadius: BorderRadius.circular(12)),
       child: Column(

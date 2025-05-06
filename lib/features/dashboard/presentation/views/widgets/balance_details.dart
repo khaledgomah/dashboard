@@ -38,21 +38,15 @@ class _BalanceDetailsState extends State<BalanceDetails> {
       children: balanceItems.asMap().entries.map((entry) {
         int index = entry.key;
         BalanceItemModel balanceItemModel = entry.value;
-        return Flexible(
-          flex: _selectedIndex == index ? 8 : 7,
-          child: AnimatedScale(
-            curve: Curves.easeInOut,
-            duration: const Duration(milliseconds: 300),
-            scale: _selectedIndex == index ? 1.05 : 0.95,
-            child: BalanceCard(
-              balanceItemModel: balanceItemModel,
-              isSelected: _selectedIndex == index,
-              onTap: () {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-            ),
+        return Expanded(
+          child: BalanceCard(
+            balanceItemModel: balanceItemModel,
+            isSelected: _selectedIndex == index,
+            onTap: () {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
           ),
         );
       }).toList(),
