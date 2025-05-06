@@ -59,8 +59,19 @@ class _IncomeSectionState extends State<IncomeSection> {
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: PieChart(
+                    duration: Durations.short2,
                     PieChartData(
-                      pieTouchData: PieTouchData(touchCallback: touchCallback),
+                      pieTouchData: PieTouchData(
+                        enabled: true,
+                        touchCallback: (event, response) => setState(() {
+                          touchedIndex =
+                              response?.touchedSection?.touchedSectionIndex ??
+                                  -1;
+                          (response?.touchedSection?.touchRadius ?? 0) > 55
+                              ? touchedIndex = -1
+                              : touchedIndex = touchedIndex;
+                        }),
+                      ),
                       borderData: FlBorderData(show: false),
                       sectionsSpace: 0,
                       centerSpaceRadius: 40,
@@ -97,7 +108,10 @@ class _IncomeSectionState extends State<IncomeSection> {
                                 backgroundColor: item.color,
                                 radius: 6,
                               ),
-                              title: Text(item.title),
+                              title: FittedBox(
+                                  alignment: Alignment.centerLeft,
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(item.title)),
                               trailing: Text(
                                 '${item.amount}%',
                                 style: TextStyle(

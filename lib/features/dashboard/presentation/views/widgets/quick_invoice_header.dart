@@ -14,7 +14,7 @@ class QuickInvoiceHeader extends StatelessWidget {
       children: [
         Text(
           'Quick Invoice',
-          style: FontStyleManager.styleSemiBold20,
+          style: FontStyleManager.styleSemiBold20(context),
         ),
         IconButton(
           style: ButtonStyle(

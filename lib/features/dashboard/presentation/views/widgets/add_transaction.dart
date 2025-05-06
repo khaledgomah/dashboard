@@ -32,7 +32,7 @@ class _AddTransactionState extends State<AddTransaction> {
                   children: [
                     Text(
                       'Item name',
-                      style: FontStyleManager.styleMedium16,
+                      style: FontStyleManager.styleMedium16(context),
                     ),
                   ],
                 ),
@@ -54,7 +54,7 @@ class _AddTransactionState extends State<AddTransaction> {
                   children: [
                     Text(
                       'item mount',
-                      style: FontStyleManager.styleMedium16,
+                      style: FontStyleManager.styleMedium16(context),
                     ),
                   ],
                 ),
@@ -68,7 +68,7 @@ class _AddTransactionState extends State<AddTransaction> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: DropdownButton(
-                    style: FontStyleManager.styleRegular16
+                    style: FontStyleManager.styleRegular16(context)
                         .copyWith(color: ColorManager.grey),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 14,

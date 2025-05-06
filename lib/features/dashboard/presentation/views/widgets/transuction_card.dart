@@ -19,7 +19,7 @@ class TransuctionCard extends StatelessWidget {
         subtitle: Text(transactionDetails.date),
         trailing: Text(
           transactionDetails.amount,
-          style: FontStyleManager.styleSemiBold16.copyWith(
+          style: FontStyleManager.styleSemiBold16(context).copyWith(
               color: transactionDetails.status == TransactionType.withdrawal
                   ? ColorManager.error
                   : ColorManager.primary),

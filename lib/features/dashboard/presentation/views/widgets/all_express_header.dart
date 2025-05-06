@@ -17,7 +17,7 @@ class _AllExpressHeaderState extends State<AllExpressHeader> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('All Expenses', style: FontStyleManager.styleSemiBold20),
+        Text('All Expenses', style: FontStyleManager.styleSemiBold20(context)),
         Container(
           decoration: BoxDecoration(
             border: Border.all(color: ColorManager.border),

@@ -25,11 +25,11 @@ class UserInfoWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(user.name, style: FontStyleManager.styleSemiBold16),
+              Text(user.name, style: FontStyleManager.styleSemiBold16(context)),
               const SizedBox(height: 5),
               Text(
                 user.email,
-                style: FontStyleManager.styleRegular12,
+                style: FontStyleManager.styleRegular12(context),
               ),
             ],
           ),

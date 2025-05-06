@@ -7,16 +7,20 @@ class TabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(flex: 604, child: AllExpensessAndQuickInvoiceSection()),
-              Expanded(flex: 468, child: CardsAndIncomeSection()),
-            ],
-          ),
-        ],
+    return Center(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                    flex: 604, child: AllExpensessAndQuickInvoiceSection()),
+                Expanded(flex: 468, child: CardsAndIncomeSection()),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

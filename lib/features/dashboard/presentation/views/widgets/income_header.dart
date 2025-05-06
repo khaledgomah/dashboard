@@ -15,9 +15,10 @@ class _IncomeHeaderState extends State<IncomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Income', style: FontStyleManager.styleSemiBold20),
+        Text('Income', style: FontStyleManager.styleSemiBold20(context)),
         Container(
           decoration: BoxDecoration(
             border: Border.all(color: ColorManager.border),

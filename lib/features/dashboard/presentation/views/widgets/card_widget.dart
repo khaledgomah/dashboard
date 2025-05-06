@@ -32,18 +32,21 @@ class CardWidget extends StatelessWidget {
                 trailing: SvgPicture.asset(Assets.imagesGallery),
                 subtitle: Text(
                   cardModel.name,
-                  style: FontStyleManager.styleMedium20
+                  style: FontStyleManager.styleMedium20(context)
                       .copyWith(color: ColorManager.white),
                 ),
                 title: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Text(
                     'Name card',
-                    style: FontStyleManager.styleRegular16
+                    style: FontStyleManager.styleRegular16(context)
                         .copyWith(color: ColorManager.white),
                   ),
                 ),
               ),
+            ),
+            const Spacer(
+              flex: 3,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 24.0, right: 24),
@@ -53,25 +56,18 @@ class CardWidget extends StatelessWidget {
                   Row(),
                   Text(
                     cardModel.number,
-                    style: FontStyleManager.styleSemiBold24
+                    style: FontStyleManager.styleSemiBold24(context)
                         .copyWith(color: ColorManager.white),
-                  ),
-                  SizedBox(
-                    height: 12,
                   ),
                   Text(
                     '${cardModel.date} - ${cardModel.cvv}',
-                    style: FontStyleManager.styleRegular16
+                    style: FontStyleManager.styleRegular16(context)
                         .copyWith(color: ColorManager.white),
                   )
                 ],
               ),
             ),
-            Flexible(
-              child: SizedBox(
-                height: 20,
-              ),
-            ),
+            const Spacer(),
           ],
         ),
       ),

@@ -12,7 +12,7 @@ class MenuItem extends StatelessWidget {
       leading: SvgPicture.asset(item.iconPath),
       title: Text(
         item.title,
-        style: FontStyleManager.styleRegular16,
+        style: FontStyleManager.styleRegular16(context),
       ),
       onTap: () {},
     );

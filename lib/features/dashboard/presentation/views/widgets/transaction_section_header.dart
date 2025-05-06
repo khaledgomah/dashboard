@@ -14,13 +14,13 @@ class TransactionSectionHeader extends StatelessWidget {
       children: [
         Text(
           'Transaction History',
-          style: FontStyleManager.styleSemiBold20,
+          style: FontStyleManager.styleSemiBold20(context),
         ),
         TextButton(
           onPressed: () {},
           child: Text(
             'See all',
-            style: FontStyleManager.styleMedium16.copyWith(
+            style: FontStyleManager.styleMedium16(context).copyWith(
               color: ColorManager.primary,
             ),
           ),

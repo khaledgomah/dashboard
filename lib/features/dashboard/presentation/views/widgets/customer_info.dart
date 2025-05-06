@@ -18,7 +18,7 @@ class CustomerInfo extends StatelessWidget {
               children: [
                 Text(
                   'Customer name',
-                  style: FontStyleManager.styleMedium16,
+                  style: FontStyleManager.styleMedium16(context),
                 ),
               ],
             ),
@@ -40,7 +40,7 @@ class CustomerInfo extends StatelessWidget {
               children: [
                 Text(
                   'Customer Email',
-                  style: FontStyleManager.styleMedium16,
+                  style: FontStyleManager.styleMedium16(context),
                 ),
               ],
             ),

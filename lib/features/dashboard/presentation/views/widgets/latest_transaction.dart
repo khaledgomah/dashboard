@@ -26,7 +26,7 @@ class LatestTransaction extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(children: [
-          Text('Latest Transaction', style: FontStyleManager.styleMedium16)
+          Text('Latest Transaction', style: FontStyleManager.styleMedium16(context))
         ]),
         SizedBox(height: 12),
         SingleChildScrollView(

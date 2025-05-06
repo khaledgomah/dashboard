@@ -1,6 +1,6 @@
 import 'package:dashboard/features/dashboard/presentation/views/widgets/cards_builder.dart';
+import 'package:dashboard/features/dashboard/presentation/views/widgets/dots_indicator.dart';
 import 'package:dashboard/models/card_model.dart';
-import 'package:dashboard/resources/color_manager.dart';
 import 'package:dashboard/resources/font_style_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +53,7 @@ class _CardsSectionState extends State<CardsSection> {
         children: [
           Text(
             'My card',
-            style: FontStyleManager.styleSemiBold20,
+            style: FontStyleManager.styleSemiBold20(context),
           ),
           SizedBox(
             height: 20,
@@ -71,32 +71,6 @@ class _CardsSectionState extends State<CardsSection> {
           )
         ],
       ),
-    );
-  }
-}
-
-class DotsIndicator extends StatelessWidget {
-  const DotsIndicator(
-      {super.key, required this.currentPage, required this.totalPages});
-  final int currentPage;
-  final int totalPages;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(
-          totalPages,
-          (index) => AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                margin: const EdgeInsets.only(right: 4),
-                width: index == currentPage ? 32 : 8,
-                height: 8,
-                decoration: BoxDecoration(
-                  color: index == currentPage
-                      ? ColorManager.primary
-                      : ColorManager.grey,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              )),
     );
   }
 }

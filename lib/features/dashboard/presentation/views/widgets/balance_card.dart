@@ -63,21 +63,21 @@ class BalanceCard extends StatelessWidget {
                   children: [
                     Text(
                       balanceItemModel.title,
-                      style: FontStyleManager.styleSemiBold20.copyWith(
+                      style: FontStyleManager.styleSemiBold20(context).copyWith(
                           color: !isSelected
                               ? ColorManager.secondary
                               : ColorManager.white),
                     ),
                     Text(
                       balanceItemModel.date,
-                      style: FontStyleManager.styleRegular14.copyWith(
+                      style: FontStyleManager.styleRegular14(context).copyWith(
                           color: !isSelected
                               ? ColorManager.grey
                               : ColorManager.lightGrey),
                     ),
                     Text(
                       balanceItemModel.amount,
-                      style: FontStyleManager.styleSemiBold24.copyWith(
+                      style: FontStyleManager.styleSemiBold24(context).copyWith(
                           color: !isSelected
                               ? ColorManager.primary
                               : ColorManager.white),

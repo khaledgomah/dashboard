@@ -4,6 +4,7 @@ import 'package:dashboard/features/dashboard/presentation/views/widgets/user_inf
 import 'package:dashboard/models/item_model.dart';
 import 'package:dashboard/models/user_model.dart';
 import 'package:dashboard/resources/assets.dart';
+import 'package:dashboard/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
 class DesktopDrawer extends StatelessWidget {
@@ -17,6 +18,7 @@ class DesktopDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: ColorManager.lightGrey,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: CustomScrollView(

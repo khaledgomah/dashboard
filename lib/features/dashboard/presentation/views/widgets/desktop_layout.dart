@@ -8,6 +8,7 @@ class DesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(flex: 280, child: DesktopDrawer()),
         Expanded(
@@ -16,6 +17,7 @@ class DesktopLayout extends StatelessWidget {
             child: Column(
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                         flex: 604, child: AllExpensessAndQuickInvoiceSection()),
